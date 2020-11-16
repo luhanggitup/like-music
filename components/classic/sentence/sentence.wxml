@@ -1,0 +1,6 @@
+<!--components/classic/sentence/sentence.wxml-->
+<view hidden="{{hidden}}" class="classic-content" >
+	<image class="content-img" src="{{img}}" />
+	<image class="content-bigimg" src="images/essay@tag.png" />
+	<text class="content-text">{{content}}</text>
+</view>

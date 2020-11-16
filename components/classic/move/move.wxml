@@ -1,0 +1,6 @@
+<!--components/classic/move/move.wxml-->
+<view hidden="{{hidden}}" class="classic-content">
+	<image class="content-img" src="{{img}}" />
+	<image class="content-bigimg" src="../../images/move@tag.png" />
+	<text class="content-text">{{content}}</text>
+</view>

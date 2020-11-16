@@ -1,0 +1,5 @@
+/* 全局页面css文件 */
+page {
+	font-family: '';
+	font-size: 32rpx;
+}

@@ -1,0 +1,12 @@
+<!--components/cpside/cpsoide.wxml-->
+<view class="container">
+	<view class="container-index">
+		<text class="plain">No.</text>
+		<text class="index">{{_index}}</text>
+		<text class="line"></text>
+	</view>
+	<view class="container-date">
+		<text class="month">{{month}}</text>
+		<text class="year">{{year}}</text>
+	</view>
+</view>

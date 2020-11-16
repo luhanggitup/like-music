@@ -1,0 +1,40 @@
+<!--pages/my/my.wxml-->
+<view class="container">
+  <image src="/images/my/my@bg.png" class="bg"></image>
+  <!-- 获取用户的信息以前是API，现在是用button -->
+  <!-- opendata不需要用户同意。直接显示用户的信息 ，头像，名称，只是显示，并没有拿到用户的信息-->
+  <!-- <open-data type="userAvatarUrl" class="avatar avatar-position" ></open-data> --> 
+  <!--客户登录授权信息 -->
+  <v-button class="nav-img" class="avatar-position" wx:if="{{!authorized}}" bind:getuserinfo="onGetUserInfo"
+    open-type="getUserInfo">
+    <image src="/images/my/my.png" class="avatar" slot="img"></image>
+  </v-button>
+  <!-- 授权以后头像区域显示的信息，头像，图片 -->
+  <view wx:if="{{authorized}}" class="avatar-position avatar-container">
+    <image src="{{userInfo.avatarUrl}}" class="avatar"></image>
+    <text>{{userInfo.nickName}}</text>
+  </view>
+  <view class="about-container" bind:tap="onJumpAbout">
+    <view class="about-us">
+      <image src="/images/my/about.png"></image>
+      <text class="description">关于我们</text>
+    </view>
+    <view class=" about-us">
+      <text >{{bookCount}}</text>
+      <text class="description">喜欢的书</text>
+    </view>
+  </view>
+  <!-- 喜欢书籍 -->
+  <view class="like-container">
+        <image class="headline" src="/images/my/like.png" />
+        <view class="preview-container">
+            <block wx:for="{{classics}}" wx:key="id">
+                <v-preview bind:tapping="onJumpToDetail" class="preview" classic="{{item}}" />
+            </block>
+        </view>
+    </view>
+
+  <!-- <button open-type="getUserInfo"  bindgetuserinfo="getUser">授权</button> -->
+
+
+</view>

@@ -1,0 +1,21 @@
+<!--pages/classic/classic.wxml-->
+<view class="container">
+	<view class="header">
+		<v-cpsoide class="cpsoide" index='{{classic.index}}'></v-cpsoide>
+		<view class="like-container">
+			<v-like class="like" like="{{likeStatus}}" count="{{likeCount}}" bind:like="onLike">
+			</v-like>
+			<!-- 分享按钮 -->
+			<v-button class="share-btn" open-type="share">
+				<image src="/images/icon/share.png" slot="img" class="share"></image>
+			</v-button>
+		</view>
+	</view>
+	<v-move hidden="{{classic.type !=100 }}" img="{{classic.image}}" content="{{classic.content}}"></v-move>
+	<v-music wx:if="{{classic.type == 200}}" img="{{classic.image}}" content="{{classic.content}}" src="{{classic.url}}">
+	</v-music>
+	<v-sentence hidden="{{classic.type != 300}}" img="{{classic.image}}" content="{{classic.content}}"></v-sentence>
+
+	<v-navi title='{{classic.title}}' latest='{{latest}}' first='{{first}}' bind:onNext='onNext' bind:onPiece='onPrevious'
+		class='navi'></v-navi>
+</view>

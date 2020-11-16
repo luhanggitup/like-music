@@ -1,0 +1,6 @@
+<!--components/tag/tag.wxml-->
+<view bind:tap="onTap" class="container">
+  <text>{{text}}</text>
+  <slot name="after"></slot>
+</view>
+<!-- 外部样式不一定覆盖普通样式 -->
